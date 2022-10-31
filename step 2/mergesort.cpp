@@ -6,7 +6,7 @@ void merge(int arr[], int start, int mid, int end)
     int i = start;
     int j = mid + 1;
     int k = start;
-    int b[5];
+    int b[10000];
 
     while (i <= mid && j <= end)
     {
@@ -43,7 +43,7 @@ void merge(int arr[], int start, int mid, int end)
 
 void mergeSort(int arr[], int start, int end)
 {
-    if (start > end)
+    if (start < end)
     {
 
         int mid = (start + end) / 2;
@@ -56,9 +56,9 @@ void mergeSort(int arr[], int start, int end)
 
 int main()
 {
+    int arr[5] = {21, 25, 19, 18, 17};
     int start = 0;
-    int end = 5;
-    int arr[5] = {5, 1, 7, 2, 4};
+    int end = 4;
 
     mergeSort(arr, start, end);
 
