@@ -6,7 +6,7 @@ void merge(int arr[], int start, int mid, int end)
     int i = start;
     int j = mid + 1;
     int k = start;
-    int b[100000];
+    int b[5];
 
     while (i <= mid && j <= end)
     {
@@ -35,7 +35,7 @@ void merge(int arr[], int start, int mid, int end)
         }
     }
 
-    for (k = start; start <= end; k++)
+    for (k = start; k <= end; k++)
     {
         arr[k] = b[k];
     }
@@ -46,7 +46,7 @@ void mergeSort(int arr[], int start, int end)
     if (start > end)
     {
 
-        int mid = start + (end - start) / 2;
+        int mid = (start + end) / 2;
 
         mergeSort(arr, start, mid);
         mergeSort(arr, mid + 1, end);
@@ -62,7 +62,10 @@ int main()
 
     mergeSort(arr, start, end);
 
-    printArray(arr, end);
+    for (int i = 0; i < end; i++)
+    {
+        cout << arr[i] << " ";
+    }
 
     return 0;
 }
